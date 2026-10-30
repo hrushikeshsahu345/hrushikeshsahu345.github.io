@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The StockOut Shield</title>
+
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+  <nav class="top-links" aria-label="Account">
+    <a href="#">search</a>
+    <a href="#">support</a>
+    <a href="#">contact</a>
+    <a href="#">log in</a>
+    <a href="#">register</a>
+    <a href="#">cart</a>
+  </nav>
+
+  <a class="brand" href="#peakai">
+    <span class="brand-name">
+      The StockOut Shield<i></i>
+    </span>
+    <span class="brand-tag">
+      Never run out when it matters
+    </span>
+  </a>
+
+  <nav class="main-nav" aria-label="Sections">
+    <a href="#peakai" data-tab="peakai" class="active">PeakAI</a>
+    <a href="#medical-stores" data-tab="medical-stores">Medical Stores</a>
+  </nav>
+
+</header>
+
+
+<main>
+
+  <!-- PeakAI -->
+  <section id="peakai" class="panel active">
+
+    <div id="chat-log" class="chat-log" aria-live="polite"></div>
+
+    <form id="chat-form" class="chat-form">
+      <input
+        id="chat-input"
+        type="text"
+        placeholder="Ask PeakAI about stock or medicines..."
+        autocomplete="off"
+        required
+      >
+
+      <button type="submit">Send</button>
+    </form>
+
+  </section>
+
+
+  <!-- Medical Stores -->
+  <section id="medical-stores" class="panel">
+
+    <p class="loc-note">
+      Your medical facilities
+    </p>
+
+    <div class="grid" id="medical-store-grid"></div>
+
+  </section>
+
+
+  <!-- Pharma Sales Prediction Page -->
+  <section id="pharma-sales" class="panel">
+
+    <div class="prediction-header">
+
+      <button class="back-button" id="back-to-stores">
+        ← Back to Medical Stores
+      </button>
+
+      <h1>Pharma Sales</h1>
+
+      <p>
+        Medicine demand forecasting and stockout prediction
+      </p>
+
+    </div>
+
+
+    <div class="prediction-card">
+
+      <h2>Demand Forecast</h2>
+
+      <div class="form-row">
+
+        <div class="form-group">
+          <label for="medicine-select">
+            Medicine
+          </label>
+
+          <select id="medicine-select">
+            <option value="M01AB">M01AB</option>
+            <option value="M01AE">M01AE</option>
+            <option value="N02BA">N02BA</option>
+            <option value="N02BE">N02BE</option>
+            <option value="N05B">N05B</option>
+            <option value="N05C">N05C</option>
+            <option value="R03">R03</option>
+            <option value="R06">R06</option>
+          </select>
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="forecast-days">
+            Forecast period
+          </label>
+
+          <select id="forecast-days">
+            <option value="7">7 days</option>
+            <option value="14">14 days</option>
+            <option value="30" selected>30 days</option>
+            <option value="60">60 days</option>
+          </select>
+
+        </div>
+
+
+        <button id="forecast-button" class="forecast-button">
+          Predict Demand
+        </button>
+
+      </div>
+
+      <div id="forecast-status"></div>
+
+      <div class="forecast-result">
+
+        <h3>Predicted Demand</h3>
+
+        <div class="table-container">
+
+          <table id="forecast-table">
+
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Predicted Demand</th>
+              </tr>
+            </thead>
+
+            <tbody id="forecast-body"></tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
