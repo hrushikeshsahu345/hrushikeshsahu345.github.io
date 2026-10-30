@@ -1,0 +1,193 @@
+:root{--ink:#4a4540;--muted:#7a746d;--line:#e6e3df;--bg:#fff;--soft:#f5f5f5;--accent:#fbb000;--link:#b05a00}
+@media(prefers-color-scheme:dark){:root{--ink:#e8e4de;--muted:#a49e96;--line:#3a3733;--bg:#1d1c1a;--soft:#272522}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:'Roboto Slab',Georgia,serif;color:var(--ink);background:var(--bg)}
+.site-header{position:relative;padding:12px 24px 0;border-bottom:1px solid var(--line)}
+.top-links{display:flex;justify-content:flex-end;gap:22px;font-weight:700;font-size:14px}
+.top-links a{color:var(--ink);text-decoration:none}
+.brand{display:inline-block;margin:6px 0 14px;text-decoration:none;color:var(--ink)}
+.brand-name{position:relative;display:inline-block;font-size:2.2rem;font-weight:300;letter-spacing:.5px}
+.brand-name i{position:absolute;right:0;bottom:-4px;width:36px;height:3px;background:var(--accent);border-radius:2px}
+.brand-tag{display:block;margin-top:6px;font-size:13px;color:var(--muted)}
+.main-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:34px;padding:14px 0 16px}
+.main-nav a{color:var(--muted);text-decoration:none;font-weight:300;font-size:16px;padding-bottom:4px;border-bottom:2px solid transparent}
+.main-nav a:hover,.main-nav a.active{color:var(--ink);border-bottom-color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+main{max-width:1100px;margin:0 auto;padding:28px 20px 60px}
+.panel{display:none}.panel.active{display:block}
+.loc-note{color:var(--muted);font-size:14px;margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.card{background:var(--soft);border-radius:8px;padding:22px;border-left:4px solid var(--accent)}
+.card h3{margin:0 0 10px;font-size:1.05rem}
+.card .dist{margin:0;color:var(--link);font-weight:700}
+.card .addr{margin:6px 0 0;font-size:13px;color:var(--muted)}
+.chat-log{min-height:50vh;max-height:60vh;overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding:6px 2px}
+.msg{max-width:78%;padding:12px 16px;border-radius:14px;line-height:1.5;font-size:15px}
+.msg.bot{background:var(--soft);align-self:flex-start}
+.msg.user{background:var(--accent);color:#2b2200;align-self:flex-end}
+.chat-form{display:flex;gap:10px;margin-top:18px;border:1px solid var(--line);border-radius:28px;padding:8px 8px 8px 20px}
+.chat-form input{flex:1;border:0;background:transparent;color:var(--ink);font:inherit;outline-offset:6px}
+.chat-form button{border:0;background:var(--accent);color:#2b2200;font:700 14px 'Roboto Slab',serif;padding:10px 22px;border-radius:22px;cursor:pointer}
+@media(max-width:600px){.main-nav{gap:18px}.top-links{gap:14px;font-size:12px}.brand-name{font-size:1.7rem}.msg{max-width:92%}}
+/* =====================================================
+   PHARMA SALES
+   ===================================================== */
+
+.store-card {
+    cursor: pointer;
+    transition: transform 0.15s ease,
+                box-shadow 0.15s ease;
+}
+
+.store-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+
+.prediction-header {
+    margin-bottom: 28px;
+}
+
+.prediction-header h1 {
+    margin: 18px 0 8px;
+    font-size: 2rem;
+}
+
+.prediction-header p {
+    color: var(--muted);
+}
+
+
+.back-button {
+    border: 1px solid var(--line);
+    background: var(--soft);
+    color: var(--ink);
+    padding: 9px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.back-button:hover {
+    border-color: var(--accent);
+}
+
+
+.prediction-card {
+    background: var(--soft);
+    border-radius: 10px;
+    padding: 28px;
+    border-left: 4px solid var(--accent);
+}
+
+.prediction-card h2 {
+    margin-top: 0;
+}
+
+
+.form-row {
+    display: flex;
+    align-items: end;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.form-group select {
+    min-width: 180px;
+    padding: 11px 14px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: inherit;
+}
+
+
+.forecast-button {
+    border: 0;
+    background: var(--accent);
+    color: #2b2200;
+    font: 700 14px 'Roboto Slab', serif;
+    padding: 12px 22px;
+    border-radius: 22px;
+    cursor: pointer;
+}
+
+.forecast-button:hover {
+    opacity: 0.9;
+}
+
+.forecast-button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+
+#forecast-status {
+    margin: 24px 0 15px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+
+.forecast-result {
+    margin-top: 25px;
+}
+
+
+.table-container {
+    overflow-x: auto;
+}
+
+
+#forecast-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg);
+}
+
+
+#forecast-table th,
+#forecast-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+}
+
+
+#forecast-table th {
+    font-weight: 700;
+}
+
+
+@media(max-width:600px) {
+
+    .form-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-group select {
+        width: 100%;
+    }
+
+    .forecast-button {
+        width: 100%;
+    }
+
+}
